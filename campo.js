@@ -74,43 +74,66 @@ function adjacentes(linha, coluna){
 
 function verifica(linha, coluna){
     //alert(linha + " e " + coluna)
-    if(campo[linha-1][coluna-1] == 0){
+    if(campo[linha][coluna] == 0){
         //alert("livre")
-        esp[linha][coluna].innerText = adjacentes(linha-1, coluna-1)
+        esp[linha + 1][coluna + 1].innerText = adjacentes(linha, coluna)
     } else {
         alert("mina")
     }
 }
 
+function logMouseButton(e) {
+    let linha = e.currentTarget.parentNode.rowIndex
+    let coluna = e.currentTarget.cellIndex
+    if (typeof e === 'object') {
+      switch (e.button) {
+        case 0: //Verifica se é Bomba ou não
+            verifica(linha, coluna)
+          break;
+        case 1: //Não sei ainda o que farei
+            alert("meio")
+          break;
+        case 2: //Coloca a bandeira
+            alert("direita")       
+          break;
+        default:
+            alert("erro")
+      }
+    }
+  }
+
 
 //-------------------------------------------------------------------------------------------------------
 function escutadores(){
-    teste.addEventListener('click', verifica )
-    esp[1][1].addEventListener('click', function(){verifica(1,1)})
-    esp[1][2].addEventListener('click', function(){verifica(1,2)})
-    esp[1][3].addEventListener('click', function(){verifica(1,3)})
-    esp[1][4].addEventListener('click', function(){verifica(1,4)})
-    esp[1][5].addEventListener('click', function(){verifica(1,5)})
-    esp[2][1].addEventListener('click', function(){verifica(2,1)})
-    esp[2][2].addEventListener('click', function(){verifica(2,2)})
-    esp[2][3].addEventListener('click', function(){verifica(2,3)})
-    esp[2][4].addEventListener('click', function(){verifica(2,4)})
-    esp[2][5].addEventListener('click', function(){verifica(2,5)})
-    esp[3][1].addEventListener('click', function(){verifica(3,1)})
-    esp[3][2].addEventListener('click', function(){verifica(3,2)})
-    esp[3][3].addEventListener('click', function(){verifica(3,3)})
-    esp[3][4].addEventListener('click', function(){verifica(3,4)})
-    esp[3][5].addEventListener('click', function(){verifica(3,5)})
-    esp[4][1].addEventListener('click', function(){verifica(4,1)})
-    esp[4][2].addEventListener('click', function(){verifica(4,2)})
-    esp[4][3].addEventListener('click', function(){verifica(4,3)})
-    esp[4][4].addEventListener('click', function(){verifica(4,4)})
-    esp[4][5].addEventListener('click', function(){verifica(4,5)})
-    esp[5][1].addEventListener('click', function(){verifica(5,1)})
-    esp[5][2].addEventListener('click', function(){verifica(5,2)})
-    esp[5][3].addEventListener('click', function(){verifica(5,3)})
-    esp[5][4].addEventListener('click', function(){verifica(5,4)})
-    esp[5][5].addEventListener('click', function(){verifica(5,5)})
+   // window.addEventListener("contextmenu", e => e.preventDefault());
+   // teste.addEventListener('click', indice )
+    esp[1][1].addEventListener('mouseup', logMouseButton)
+    esp[1][2].addEventListener('mouseup', logMouseButton)
+    esp[1][3].addEventListener('mouseup', logMouseButton)
+    esp[1][4].addEventListener('mouseup', logMouseButton)
+    esp[1][5].addEventListener('mouseup', logMouseButton)
+    esp[2][1].addEventListener('mouseup', logMouseButton)
+    esp[2][2].addEventListener('mouseup', logMouseButton)
+    esp[2][3].addEventListener('mouseup', logMouseButton)
+    esp[2][4].addEventListener('mouseup', logMouseButton)
+    esp[2][5].addEventListener('mouseup', logMouseButton)
+    esp[3][1].addEventListener('mouseup', logMouseButton)
+    esp[3][2].addEventListener('mouseup', logMouseButton)
+    esp[3][3].addEventListener('mouseup', logMouseButton)
+    esp[3][4].addEventListener('mouseup', logMouseButton)
+    esp[3][5].addEventListener('mouseup', logMouseButton)
+    esp[4][1].addEventListener('mouseup', logMouseButton)
+    esp[4][2].addEventListener('mouseup', logMouseButton)
+    esp[4][3].addEventListener('mouseup', logMouseButton)
+    esp[4][4].addEventListener('mouseup', logMouseButton)
+    esp[4][5].addEventListener('mouseup', logMouseButton)
+    esp[5][1].addEventListener('mouseup', logMouseButton)
+    esp[5][2].addEventListener('mouseup', logMouseButton)
+    esp[5][3].addEventListener('mouseup', logMouseButton)
+    esp[5][4].addEventListener('mouseup', logMouseButton)
+    esp[5][5].addEventListener('mouseup', logMouseButton)
+
+   // esp[1][1].addEventListener('contextmenu', function(){bandeira(1,1,Event)})
 }
 
 
