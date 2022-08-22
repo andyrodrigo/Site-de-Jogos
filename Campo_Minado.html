@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="campo.css">
     
     <title>Campo Minado</title>
 </head>
@@ -13,10 +13,20 @@
     <header>
         <h1>Campo Minado</h1>
     </header>
+<!--
+    <button id="teste">teste</button>-->
 
-    <button id="teste">teste</button>
+    <section id="telaInicial">
+        <div id="selectNivel">
+            <button id="btnIniciante" class="btnNivel">INICIANTE</button>
+            <button id="btnIntermediario" class="btnNivel">INTERMEDIÁRIO</button>
+            <button id="btnAvancado" class="btnNivel">AVANÇADO</button>
+            <button id="btnEspecialista" class="btnNivel">ESPECIALISTA</button>
+        </div>
+    </section>
 
-    <main oncontextmenu="return false;">
+    <main id="telaDeJogo" oncontextmenu="return false;">
+        <!--
         <table>
             <tr>
                 <td class="espaço" id="1x1" ><button>V</button></td>
@@ -53,13 +63,17 @@
                 <td class="espaço" id="5x4" ><button>V</button></td>
                 <td class="espaço" id="5x5" ><button>V</button></td>
             </tr>
+
         </table>
+        -->
     </main>
 
     <footer>
         Criado por "Andy" Rodrigo
     </footer>
 
+    <script src="campoVar.js"></script>
+    <script src="campoFunctions.js"></script>
     <script src="campo.js"></script>
 
 </body>

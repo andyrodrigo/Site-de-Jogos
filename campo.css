@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+body{
+    background-color:#00ff88;
+}
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(90deg, #233329 0%, #63D471 100%);
+    color: white;                /*Cor do texto*/
+    padding: 10px;                  /*Espaçamento dentro dele*/
+    margin: 10px;
+    outline: 0px;
+    border: 0;
+    border-radius: 10px;
+    text-align: center;             /*Alinhamento do texto*/
+    box-shadow: 10px 10px 10px black;
+}
+
+#telaInicial{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #233329 0%, #63D471 100%);
+    border-radius: 10px;
+    margin: 30px 10px 10px 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+
+#selectNivel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.btnNivel{
+    font-family: monospace;
+    border-radius: 10px;
+    border: 0;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 10px 10px 10px black;
+    background-color: #233329;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.btnNivel:hover{
+    color: goldenrod;
+}
+
+main{
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: linear-gradient(90deg, #233329 0%, #63D471 100%);
+    
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 10px;
+    outline: 10px;
+    /*min-width: 320px;
+    max-width: 1000px;*/
+    height: max-content;
+    box-shadow: 10px 10px 10px black;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;             /*Alinhamento do texto*/
+    color: white;
+    background: linear-gradient(90deg, #233329 0%, #63D471 100%);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 10px;
+    outline: 0px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.bloco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+    box-shadow: 10px 10px 10px black;
+}
