@@ -23,12 +23,16 @@ function acaoDoMouse(e) {
 
 function verifica(linha, coluna){
     //Se não tiver uma bandeira protegendo este espaço...
-    if( !espaco[linha][coluna].classList.contains("bandeira") ){
+    if( !espaco[linha][coluna].classList.contains("bandeira") && !espaco[linha][coluna].classList.contains("verificado") ){
         //marca como verificado
         espaco[linha][coluna].classList.add("verificado")
 
         if(campo[linha][coluna] == 0){//Não tem MINA
-            espaco[linha][coluna].innerText = adjacentes(linha, coluna)
+            let minasAoRedor = adjacentes(linha, coluna)
+            espaco[linha][coluna].innerText = minasAoRedor
+            if(minasAoRedor == 0){
+                abrirAdjacentes(linha, coluna)
+            }
         } else {//Tem MINA
             explodir( linha, coluna )
         }
@@ -40,9 +44,9 @@ function adjacentes(linha, coluna){
     let contador = 0
     let aux1 = linha - 1
     let aux2 = coluna - 1
-    for(i=0;i<3;i++){
-        for(j=0;j<3;j++){
-            if(aux1 < 1 || aux2 < 1 || aux1 > lines || aux2 > colunms){
+    for(let i=0;i<3;i++){
+        for(let j=0;j<3;j++){
+            if(aux1 < 1 || aux2 < 1 || aux1 > linhas || aux2 > colunas || aux1 == linha && aux2 == coluna){
                 //não analisa (fora da matriz)
             }else{
                 if(campo[aux1][aux2] == 1){
@@ -55,6 +59,38 @@ function adjacentes(linha, coluna){
         aux1++
     }
     return contador
+}
+
+function abrirAdjacentes(linha, coluna){
+    let aux1 = linha - 1
+    let aux2 = coluna - 1
+    for(let i=0;i<3;i++){
+        for(let j=0;j<3;j++){
+            //console.log("tentativa: " + i +":"+ j)
+            if(aux1 < 1 || aux2 < 1 || aux1 > linhas || aux2 > colunas || aux1 == linha && aux2 == coluna ){
+                //não analisa (fora da matriz) e nem o Próprio espaço
+            }else{
+                if( !espaco[aux1][aux2].classList.contains("bandeira") && !espaco[aux1][aux2].classList.contains("verificado")){
+                    abrirEspaco(aux1, aux2)
+                } 
+            }
+            aux2++
+        }
+        aux2 = aux2 - 3
+        aux1++
+    }
+    //return
+}
+
+function abrirEspaco(linha, coluna){
+    console.log("campo "+linha +":"+coluna)
+    //marca como verificado
+    espaco[linha][coluna].classList.add("verificado")
+    let minasAoRedor = adjacentes(linha, coluna)
+    espaco[linha][coluna].innerText = minasAoRedor
+    if(minasAoRedor == 0){
+        abrirAdjacentes(linha, coluna)
+    }
 }
 
 function inserirBandeira( linha, coluna ){

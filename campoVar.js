@@ -8,8 +8,10 @@ const btnIntermediario = document.getElementById("btnIntermediario")
 const btnAvancado = document.getElementById("btnAvancado")
 const btnEspecialista = document.getElementById("btnEspecialista")
 
-var lines = 12;
-var colunms = 12;
+var linhas = 12;
+var colunas = 12;
+var minas = 10;
+var armazenador = []
 
 var espaco; //Variável que armazena todos os blocos de minas
 var campo; //Matriz Auxiliar com os dados das minas 
