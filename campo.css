@@ -106,19 +106,20 @@ footer{
 }
 
 .espaco{
+    font-weight: bolder;
     text-align: center;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 3px;
     margin: 3px;
-    background-color: black;
-    padding: 3px;
+    /*padding: 3px;*/
     cursor: pointer;
 }
 
 .espaco > img{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 15px;
+    /*padding: 0 !important ;*/
 }
 
 .logo > img{
@@ -126,4 +127,32 @@ footer{
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.coberto{
+    background-color:darkgreen;
+}
+
+.verificado{
+    background-color:darkgray;
+}
+
+.azul{
+    color: blue
+}
+
+.verde{
+    color: green
+}
+
+.vermelho{
+    color: red
+}
+
+.azulEscuro{
+    color: darkblue
+}
+
+.amarelo{
+    color: yellow
 }

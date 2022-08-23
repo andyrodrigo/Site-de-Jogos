@@ -11,7 +11,7 @@ const btnEspecialista = document.getElementById("btnEspecialista")
 var linhas = 12;
 var colunas = 12;
 var minas = 10;
-var armazenador = []
+var primeiraJogada = true;
 
 var espaco; //Variável que armazena todos os blocos de minas
 var campo; //Matriz Auxiliar com os dados das minas 
@@ -26,10 +26,10 @@ var campo; //Matriz Auxiliar com os dados das minas
 //-------------------------------------------------------------------------------------------------------
 function escutadores(){
 
-     btnIniciante.addEventListener( 'click' , iniciarJogo )
-     btnIntermediario.addEventListener( 'click' , iniciarJogo )
-     btnAvancado.addEventListener( 'click' , iniciarJogo )
-     btnEspecialista.addEventListener( 'click' , iniciarJogo )
+     btnIniciante.addEventListener( 'click' , function(){iniciarJogo(1)} )
+     btnIntermediario.addEventListener( 'click' , function(){iniciarJogo(2)} )
+     btnAvancado.addEventListener( 'click' , function(){iniciarJogo(3)} )
+     btnEspecialista.addEventListener( 'click' , function(){iniciarJogo(4)} )
  
  }
  

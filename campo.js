@@ -29,10 +29,13 @@ function verifica(linha, coluna){
 
         if(campo[linha][coluna] == 0){//Não tem MINA
             let minasAoRedor = adjacentes(linha, coluna)
-            espaco[linha][coluna].innerText = minasAoRedor
+            
             if(minasAoRedor == 0){
                 abrirAdjacentes(linha, coluna)
+            }else{
+                espaco[linha][coluna].innerText = minasAoRedor
             }
+            espaco[linha][coluna].classList.add( colorirNumero(minasAoRedor) )
         } else {//Tem MINA
             explodir( linha, coluna )
         }
@@ -87,9 +90,35 @@ function abrirEspaco(linha, coluna){
     //marca como verificado
     espaco[linha][coluna].classList.add("verificado")
     let minasAoRedor = adjacentes(linha, coluna)
-    espaco[linha][coluna].innerText = minasAoRedor
+    //espaco[linha][coluna].innerText = minasAoRedor
     if(minasAoRedor == 0){
         abrirAdjacentes(linha, coluna)
+    }else{
+        espaco[linha][coluna].innerText = minasAoRedor
+    }
+    espaco[linha][coluna].classList.add( colorirNumero(minasAoRedor) )
+}
+
+function colorirNumero(minasAoRedor){
+    switch(minasAoRedor){
+        case 0:
+            return
+        case 1:
+            return "azul"
+        case 2:
+            return "verde"
+        case 3:
+            return "vermelho"
+        case 4:
+            return "azulEscuro"
+        case 5:
+            return "amarelo"
+        case 6:
+            return "amarelo"
+        case 7:
+            return "amarelo"
+        case 8:
+            return "amarelo"
     }
 }
 
@@ -99,12 +128,8 @@ function inserirBandeira( linha, coluna ){
         //se já tiver bandeira
         if( espaco[linha][coluna].classList.contains("bandeira") ){
             espaco[linha][coluna].classList.remove("bandeira")
-            espaco[linha][coluna].innerText = "V"
-            if( espaco[linha][coluna].contains( bandeira) ){
-                espaco[linha][coluna].removeChild( bandeira )
-            }     
+            espaco[linha][coluna].innerText = ""  
         }else{//se não tiver uma bandeira
-            espaco[linha][coluna].innerText = ""
             let bandeira = document.createElement("IMG");
             bandeira.src = "imagens/bandeira.png"
             espaco[linha][coluna].appendChild( bandeira )
