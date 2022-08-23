@@ -105,7 +105,39 @@ footer{
     box-shadow: 10px 10px 10px black;
 }
 
-.espaco{
+.espacoGrande{
+    font-weight: bolder;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    margin: 3px;
+    /*padding: 3px;*/
+    cursor: pointer;
+}
+
+.imagemEspacoGrande{
+    width: 30px;
+    height: 25px;
+}
+
+.espacoMedio{
+    font-weight: bolder;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    margin: 3px;
+    /*padding: 3px;*/
+    cursor: pointer;
+}
+
+.imagemEspacoMedio{
+    width: 25px;
+    height: 20px;
+}
+
+.espacoPequeno{
     font-weight: bolder;
     text-align: center;
     width: 20px;
@@ -116,10 +148,9 @@ footer{
     cursor: pointer;
 }
 
-.espaco > img{
+.imagemEspacoPequeno{
     width: 20px;
     height: 15px;
-    /*padding: 0 !important ;*/
 }
 
 .logo > img{

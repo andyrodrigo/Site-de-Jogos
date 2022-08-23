@@ -1,13 +1,18 @@
 //Funções----------------------------------------------------------------------------------------------------------
 
 function acaoDoMouse(e) {
+
     let linha = e.currentTarget.parentNode.rowIndex + 1
     let coluna = e.currentTarget.cellIndex + 1
-    //alert(linha + "e" + coluna)
+    
     if (typeof e === 'object') {
         switch (e.button) {
             case 0: //Verifica se é Bomba ou não
-                verifica(linha, coluna)
+                if(primeiraJogada){
+                    abreJogoInicial(linha, coluna)
+                }else{
+                    verifica(linha, coluna)
+                } 
             break;
             case 1: //Não sei ainda o que farei
                 alert("meio")
@@ -27,7 +32,7 @@ function verifica(linha, coluna){
         //marca como verificado
         espaco[linha][coluna].classList.add("verificado")
 
-        if(campo[linha][coluna] == 0){//Não tem MINA
+        if(campo[linha][coluna] == false){//Não tem MINA
             let minasAoRedor = adjacentes(linha, coluna)
             
             if(minasAoRedor == 0){
@@ -52,7 +57,7 @@ function adjacentes(linha, coluna){
             if(aux1 < 1 || aux2 < 1 || aux1 > linhas || aux2 > colunas || aux1 == linha && aux2 == coluna){
                 //não analisa (fora da matriz)
             }else{
-                if(campo[aux1][aux2] == 1){
+                if(campo[aux1][aux2] == true){
                     contador++
                 }
             }
@@ -86,7 +91,7 @@ function abrirAdjacentes(linha, coluna){
 }
 
 function abrirEspaco(linha, coluna){
-    console.log("campo "+linha +":"+coluna)
+    //console.log("campo "+linha +":"+coluna)
     //marca como verificado
     espaco[linha][coluna].classList.add("verificado")
     let minasAoRedor = adjacentes(linha, coluna)
@@ -132,6 +137,7 @@ function inserirBandeira( linha, coluna ){
         }else{//se não tiver uma bandeira
             let bandeira = document.createElement("IMG");
             bandeira.src = "imagens/bandeira.png"
+            bandeira.classList.add( classeDaImagem ) 
             espaco[linha][coluna].appendChild( bandeira )
             espaco[linha][coluna].classList.add("bandeira")   
         } 
@@ -143,6 +149,7 @@ function explodir( linha, coluna ){
     espaco[linha][coluna].style.backgroundColor = "red"
     let mina = document.createElement("IMG");
     mina.src = "imagens/mina.png"
+    mina.classList.add( classeDaImagem ) 
     espaco[linha][coluna].appendChild( mina )
 }
 

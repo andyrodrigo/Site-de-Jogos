@@ -12,14 +12,13 @@ var linhas = 12;
 var colunas = 12;
 var minas = 10;
 var primeiraJogada = true;
+var classeDoEspaco = "espacoMedio";
+var classeDaImagem = "imagemEspacoMedio";
 
 var espaco; //Variável que armazena todos os blocos de minas
 var campo; //Matriz Auxiliar com os dados das minas 
-// 0 = Não tem mina
-// 1 = Tem uma mina
 
 //teste = document.getElementById("teste")
-
 
 //-------------------------------------------------------------------------------------------------------
 
