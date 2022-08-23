@@ -23,7 +23,7 @@ function iniciarJogo(){
             espaco[i][j].innerHTML = "V"
             espaco[i].appendChild( espaco[i][j] )
             espaco[i][j].classList.add("espaco")
-            espaco[i][j].addEventListener('mouseup', logMouseButton)
+            espaco[i][j].addEventListener('mouseup', acaoDoMouse )
             campo[i][j] =  Math.floor(Math.random() * 2)
             
         }
