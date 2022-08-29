@@ -76,9 +76,9 @@ Projeto no Github: https://github.com/andyrodrigo/Car_Game
 * [x] Layout gradiente, cores de espaços e números
 * [x] Abrir recursivamente espaços ao redor que não tem minas
 * [x] Verificação de quantidade de minas ao redor
-* [ ] Botões de retorno e Funções das telas
+* [x] Botões de retorno e Funções das telas
 * [ ] Fim de jogo e som de explosão e cliques
 * [ ] Reconhecimento de Vitória
-* [ ] Temporizador
-* [ ] Indicador de quantidade de bandeiras
+* [x] Temporizador
+* [x] Indicador de quantidade de bandeiras
 * [ ] Instruções
