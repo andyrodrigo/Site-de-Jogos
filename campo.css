@@ -61,7 +61,7 @@ header {
     width: 30px;
 }
 
-#sair:hover{
+.btnIndicador:hover{
     cursor: pointer;
     color: goldenrod;
 }
@@ -226,4 +226,8 @@ footer{
 
 .amarelo{
     color: yellow
+}
+
+.branco{
+    color: white
 }

@@ -12,6 +12,7 @@ function iniciarJogo( nivel ){
             minas = 10
             classeDoEspaco = "espacoGrande"
             classeDaImagem = "imagemEspacoGrande"
+            indicadorDeNivel.innerText = "Iniciante"
             break;
         case 2:
             linhas = 14
@@ -19,6 +20,7 @@ function iniciarJogo( nivel ){
             minas = 40
             classeDoEspaco = "espacoMedio"
             classeDaImagem = "imagemEspacoMedio"
+            indicadorDeNivel.innerText = "Intermediário"
             break;
         case 3:
             linhas = 20
@@ -26,6 +28,7 @@ function iniciarJogo( nivel ){
             minas = 99
             classeDoEspaco = "espacoPequeno"
             classeDaImagem = "imagemEspacoPequeno"
+            indicadorDeNivel.innerText = "Avançado"
             break;
         case 4:
             linhas = 25
@@ -33,11 +36,20 @@ function iniciarJogo( nivel ){
             minas = 200
             classeDoEspaco = "espacoPequeno"
             classeDaImagem = "imagemEspacoPequeno"
+            indicadorDeNivel.innerText = "Especialista"
             break;
         default:
             alert("erro")
             console.log("erro")
     }
+    //Ajusta Indicadores
+    bandeiras = 0
+    quantDeBandeirasAtuais.innerHTML = bandeiras.toString()
+    quantDeBandeirasTotais.innerHTML = "/" + minas.toString()
+    quantDeBandeirasAtuais.classList.remove( "vermelho" )
+    quantDeBandeirasAtuais.classList.add( "branco" )
+    btnPause.classList.remove( "azul" )
+    btnPause.classList.add( "branco" ) 
     //troca de tela
     telaInicial.style.display = 'none'
     telaDeJogo.style.display = 'flex'
@@ -69,10 +81,12 @@ function iniciarJogo( nivel ){
             
         }
     }
-    //geradorDeCampoMinado( campo )
     //Insere o campo na tela
     telaDeJogo.appendChild(tabela)
-       
+    //Inicia o temporizador
+    pausa = false
+    resetarTempo()
+    iniciarTempo()
 }
 
 function geradorDeCampoMinado( campo ){
@@ -82,7 +96,7 @@ function geradorDeCampoMinado( campo ){
     while( colocadorDeminas < minas ){
         let l = Math.floor(Math.random() * linhas) + 1
         let c = Math.floor(Math.random() * colunas) + 1
-        //console.log("linha: " + l + ", coluna: " + c)
+ 
         if( campo[l][c] == true || campo[l][c] == false){
             //Já foi definido
         }else{
@@ -98,9 +112,7 @@ function geradorDeCampoMinado( campo ){
             }else{
                 campo[i][j] = false
             }
-            //console.log(campo[i][j])
         }
-        //console.log("/n")
     }
 
 }
@@ -131,4 +143,76 @@ function abreJogoInicial(linha, coluna){
         //abre o primeiro espaço
         verifica(linha, coluna)
     }
+}
+
+// Iniciar Temporizador
+function iniciarTempo(){
+    pararTempo() //para o intervalo de tempo
+    cronometro = setInterval( () => {temporizar();} , 1000 ) // ajuste a cada 1 segundo
+}
+
+function temporizar(){
+    if ( (segundos += 1) == 60) {
+        segundos = 0;
+        minutos++;
+      }
+      if (minutos == 60) {
+        minutos = 0;
+        horas++;
+      }
+
+      let tempoTotal = ajustarTempo(horas) + ":" + ajustarTempo(minutos) + ":" + ajustarTempo(segundos)
+      tempo.innerHTML = tempoTotal;
+
+}
+
+//Retorna o tempo com 2 digitos sempre
+function ajustarTempo( entrada ){
+    //se entrada maior ou igual que 10: retorna ela mesma, se não acrescenta um zero na frente
+    return entrada >= 10 ? entrada : `0${entrada}`
+}
+
+function resetarTempo(){
+    horas = 0
+    minutos = 0
+    segundos = 0
+    let tempoTotal = ajustarTempo(horas) + ":" + ajustarTempo(minutos) + ":" + ajustarTempo(segundos)
+    tempo.innerHTML = tempoTotal;
+}
+
+function pararTempo(){
+    clearInterval(cronometro)
+}
+
+function pausar(){
+    if( pausa === false ){
+        pausa = true
+        pararTempo()
+        btnPause.innerHTML = "CONTINUAR"
+        btnPause.classList.remove( "branco" )
+        btnPause.classList.add( "azul" )
+        telaDeJogo.style.display = 'none'
+    }else{
+        pausa = false
+        iniciarTempo()
+        btnPause.innerHTML = "PAUSAR"
+        btnPause.classList.remove( "azul" )
+        btnPause.classList.add( "branco" )
+        telaDeJogo.style.display = 'flex'
+    }
+}
+
+function sair(){
+    //troca de tela
+    telaInicial.style.display = 'flex'
+    telaDeJogo.style.display = 'none'
+    titulo.style.display = 'flex'
+    indicadores.style.display = 'none'
+    //Limpa jogo anterior
+    clearInterval(cronometro)
+    telaDeJogo.innerHTML = ""
+}
+
+function mostrarInstrucoes(){
+    alert("mostrar")
 }

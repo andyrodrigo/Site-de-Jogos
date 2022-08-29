@@ -133,14 +133,25 @@ function inserirBandeira( linha, coluna ){
         //se já tiver bandeira
         if( espaco[linha][coluna].classList.contains("bandeira") ){
             espaco[linha][coluna].classList.remove("bandeira")
-            espaco[linha][coluna].innerText = ""  
+            espaco[linha][coluna].innerText = "" 
+            bandeiras--
+            if(bandeiras <= minas){
+                quantDeBandeirasAtuais.classList.remove( "vermelho" )
+                quantDeBandeirasAtuais.classList.add( "branco" )     
+            }
         }else{//se não tiver uma bandeira
             let bandeira = document.createElement("IMG");
             bandeira.src = "imagens/bandeira.png"
             bandeira.classList.add( classeDaImagem ) 
             espaco[linha][coluna].appendChild( bandeira )
             espaco[linha][coluna].classList.add("bandeira")   
-        } 
+            bandeiras++
+            if(bandeiras > minas){
+                quantDeBandeirasAtuais.classList.remove( "branco" )
+                quantDeBandeirasAtuais.classList.add( "vermelho" ) 
+            }
+        }
+        quantDeBandeirasAtuais.innerHTML = bandeiras.toString()
     }
 }
 

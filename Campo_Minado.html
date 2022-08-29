@@ -24,25 +24,25 @@
             </div>
             <div id="temporizador" class="indicador">
                 <img id="clock" src="imagens/clock.png" alt="relógio">
-                <p>00:20:24</p>
+                <p id="tempo">00:00:00</p>
             </div>
             <div class="indicador">
                 <img src="imagens/bandeira.png" class="imagemEspacoGrande" alt="bandeira vermelha">
                 <p id="quantDeBandeirasAtuais">00</p>
-                <p id="quantDeBandeirasTotais">/40</p>
+                <p id="quantDeBandeirasTotais">/00</p>
             </div>
-            <div id="instrucoes" class="indicador">
+            <div id="btnPause" class="indicador btnIndicador">
+                PAUSAR
+            </div>
+            <div id="btnInstrucoes" class="indicador btnIndicador">
                 INSTRUÇÕES
             </div>
-            <div id="sair" class="indicador">
+            <div id="btnSair" class="indicador btnIndicador">
                 SAIR
             </div>
         </div>
 
     </header>
-<!--<button id="teste">teste</button>-->
-
-
 
     <section id="telaInicial">
         <div id="selectNivel">
@@ -52,7 +52,6 @@
             <button id="btnEspecialista" class="btnNivel">ESPECIALISTA</button>
         </div>
     </section>
-
 
     <main id="telaDeJogo" oncontextmenu= "return false;" ></main>
 
