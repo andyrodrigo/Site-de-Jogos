@@ -3,6 +3,15 @@
 const telaInicial = document.getElementById("telaInicial")
 const telaDeJogo = document.getElementById("telaDeJogo")
 
+const titulo = document.getElementById("titulo")
+const indicadores = document.getElementById("indicadores")
+
+const indicadorDeNivel = document.getElementById("indicadorDeNivel")
+const quantDeBandeirasAtuais = document.getElementById("quantDeBandeirasAtuais")
+const quantDeBandeirasTotais = document.getElementById("quantDeBandeirasTotais")
+const instrucoes = document.getElementById("instrucoes")
+const sair = document.getElementById("sair")
+
 const btnIniciante = document.getElementById("btnIniciante")
 const btnIntermediario = document.getElementById("btnIntermediario")
 const btnAvancado = document.getElementById("btnAvancado")
@@ -31,7 +40,6 @@ function escutadores(){
      btnEspecialista.addEventListener( 'click' , function(){iniciarJogo(4)} )
  
  }
- 
  
  //-------------------------------------------------------------------------------------------------------
  //inicialização

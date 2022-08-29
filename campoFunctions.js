@@ -41,6 +41,8 @@ function iniciarJogo( nivel ){
     //troca de tela
     telaInicial.style.display = 'none'
     telaDeJogo.style.display = 'flex'
+    titulo.style.display = 'none'
+    indicadores.style.display = 'flex' 
     //Cria a grade do campo minado
     const tabela = document.createElement("TABLE");
     // prepara as variaveis para receber os elementos

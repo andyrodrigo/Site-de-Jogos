@@ -12,11 +12,37 @@
 
 <body>
     <header>
-        <img src="imagens/bandeira.png" alt="bandeira vermelha">
-        <h1>Campo Minado</h1>
-        <img src="imagens/mina.png" alt="mina terrestre">
+        <div id="titulo">
+            <img src="imagens/bandeira.png" alt="bandeira vermelha">
+            <h1>Campo Minado</h1>
+            <img src="imagens/mina.png" alt="mina terrestre">
+        </div>
+
+        <div id="indicadores">
+            <div id="indicadorDeNivel" class="indicador">
+                Especialista 
+            </div>
+            <div id="temporizador" class="indicador">
+                <img id="clock" src="imagens/clock.png" alt="relógio">
+                <p>00:20:24</p>
+            </div>
+            <div class="indicador">
+                <img src="imagens/bandeira.png" class="imagemEspacoGrande" alt="bandeira vermelha">
+                <p id="quantDeBandeirasAtuais">00</p>
+                <p id="quantDeBandeirasTotais">/40</p>
+            </div>
+            <div id="instrucoes" class="indicador">
+                INSTRUÇÕES
+            </div>
+            <div id="sair" class="indicador">
+                SAIR
+            </div>
+        </div>
+
     </header>
 <!--<button id="teste">teste</button>-->
+
+
 
     <section id="telaInicial">
         <div id="selectNivel">
@@ -26,6 +52,7 @@
             <button id="btnEspecialista" class="btnNivel">ESPECIALISTA</button>
         </div>
     </section>
+
 
     <main id="telaDeJogo" oncontextmenu= "return false;" ></main>
 
