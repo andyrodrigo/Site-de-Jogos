@@ -77,8 +77,8 @@ Projeto no Github: https://github.com/andyrodrigo/Car_Game
 * [x] Abrir recursivamente espaços ao redor que não tem minas
 * [x] Verificação de quantidade de minas ao redor
 * [x] Botões de retorno e Funções das telas
-* [ ] Fim de jogo e som de explosão e cliques
-* [ ] Reconhecimento de Vitória
+* [x] Fim de jogo com som de explosão e aplausos
+* [x] Reconhecimento de Vitória
 * [x] Temporizador
 * [x] Indicador de quantidade de bandeiras
-* [ ] Instruções
+* [x] Instruções
