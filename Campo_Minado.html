@@ -12,6 +12,7 @@
 
 <body>
     <header>
+
         <div id="titulo">
             <img src="imagens/bandeira.png" alt="bandeira vermelha">
             <h1>Campo Minado</h1>
@@ -19,36 +20,42 @@
         </div>
 
         <div id="indicadores">
-            <div id="indicadorDeNivel" class="indicador mostrador">
+
+            <div id="indicadorDeNivel" class="indicador">
                 Especialista 
             </div>
-            <div id="temporizador" class="indicador mostrador">
+
+            <div id="temporizador" class="indicador">
                 <img id="clock" src="imagens/clock.png" alt="relógio">
                 <p id="tempo">00:00:00</p>
             </div>
+
             <div class="indicador">
                 <img src="imagens/bandeira.png" class="imagemEspacoGrande" alt="bandeira vermelha">
                 <p id="quantDeBandeirasAtuais">00</p>
                 <p id="quantDeBandeirasTotais">/00</p>
             </div>
-            <div id="btnPause" class="indicador btnIndicador mostrador">
+
+            <div id="btnPause" class="indicador btnIndicador">
                 PAUSAR
             </div>
-            <div id="btnInstrucoes" class="indicador btnIndicador mostrador">
+
+            <div id="btnInstrucoes" class="indicador btnIndicador">
                 INSTRUÇÕES
             </div>
 
-            <div id="vitoria" class="indicador btnIndicador">
-                <h2 id="msgVitoria">PARABÉNS</h2>
+            <div id="telaMSG" class="indicador btnIndicador">
+                <h2 id="msgJogo">PARABÉNS</h2>
             </div>
 
             <div id="btnSair" class="indicador btnIndicador">
                 SAIR
             </div>
+
+            <div id="btnVoltar" class="indicador btnIndicador">
+                VOLTAR PARA O JOGO
+            </div>
         </div>
-
- 
-
     </header>
 
     <section id="telaInicial">
@@ -61,6 +68,52 @@
     </section>
 
     <main id="telaDeJogo" oncontextmenu= "return false;" ></main>
+
+    <section id="telaInstrucoes">
+        <div class="bloco_instrucao">
+            <div>
+                <P class="golden" >OBJETIVO</P>
+            </div>
+
+            <div class="inst_expl">
+                <p>Você deve abrir todos os espaços do campo que não possuem uma mina para vencer. Cada nível tem uma quantidade diferente de minas.</p>
+                <img id="telasVD" src="imagens/telas.png" alt="Exemplos de tela de vitória e derrota">
+                <p>Cada espaço aberto indica quantas minas existem nos espaços adjacentes a ele através do número nele, use essas informações para descobrir qual dos espaços ao redor tem uma mina e evitar aquele espaço.</p>
+                <p>Se não houver nenhum número no espaço, é porque não existem minas adjacentes a ele, esse tipo de espaço abre automaticamente todos os espaços adjacentes para te poupar tempo.</p>
+                <p>Se você abrir um espaço que tem uma mina, é fim de jogo!</p>
+            </div>
+        </div>
+
+        <div class="bloco_instrucao">
+            <div>
+                <p class="golden">CONTROLES</p>
+            </div>
+
+            <div class="inst_expl">
+                <img id="mouse" src="imagens/mouse.png" alt="mouse com numeros 1, 2 e 3">
+                <p> 1 - Abre o espaço, revelando se há ou não uma mina. Lugares marcados com bandeiras ou interrogações não podem ser abertos.</p>
+                <p> 2 - Marca com uma interrogação ou desmarca uma já posta, use para marcar lugares que você tem dúvidas sobre ter uma mina</p>
+                <p> 3 - Marca com uma bandeira ou desmarca uma já posta, use para marcar lugares que você acredita ter uma mina</p>   
+            </div>
+        </div>
+
+        <div class="bloco_instrucao">
+            <div>
+                <p class="golden">INDICADORES</p>
+            </div>
+
+            <div class="inst_expl">
+                <p>1 - Indica o Nível do jogo escolhido</p>
+                <p>2 - Indica o Tempo da Partida</p>
+                <p>3 - Indica a quantidade de bandeiras postas por você e a quantidade de minas do campo</p>
+                <img id="indicadoresImagem" src="imagens/Indicadores.png" alt="indicadores com numeros de 1 a 6">
+                <p>4 - Pausa o jogo ou Continua o jogo, use para parar o tempo.</p>
+                <p>5 - Abre estas instruções</p>
+                <p>6 - Retorna a tela inicial e encerra aquela partida.</p>
+                
+            </div>      
+        </div>
+    </section>
 
     <footer>
         <p> Criado por Anderson Rodrigo "Andy" </p>

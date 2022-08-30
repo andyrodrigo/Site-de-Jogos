@@ -10,12 +10,14 @@ const indicadorDeNivel = document.getElementById("indicadorDeNivel")
 const tempo = document.getElementById("tempo")
 const quantDeBandeirasAtuais = document.getElementById("quantDeBandeirasAtuais")
 const quantDeBandeirasTotais = document.getElementById("quantDeBandeirasTotais")
-const vitoria = document.getElementById("vitoria")
-const msgVitoria = document.getElementById("msgVitoria")
+const telaMSG = document.getElementById("telaMSG")
+const msgJogo = document.getElementById("msgJogo")
 const btnPause = document.getElementById("btnPause")
 const btnInstrucoes = document.getElementById("btnInstrucoes")
 const btnSair = document.getElementById("btnSair")
-const mostrador = document.getElementsByClassName("mostrador")
+const btnVoltar = document.getElementById("btnVoltar")
+const indicador = document.getElementsByClassName("indicador")
+
 
 const btnIniciante = document.getElementById("btnIniciante")
 const btnIntermediario = document.getElementById("btnIntermediario")
@@ -32,6 +34,9 @@ var bandeiras = 0
 var primeiraJogada = true;
 var classeDoEspaco = "espacoMedio";
 var classeDaImagem = "imagemEspacoMedio";
+
+var somExplosao = new Audio("audio/explosao.mp3")
+var somAplausos = new Audio("audio/aplausos.mp3")
 
 let horas = 0
 let minutos = 0
@@ -54,7 +59,7 @@ function escutadores(){
      btnPause.addEventListener('click', pausar)
      btnInstrucoes.addEventListener('click', mostrarInstrucoes)
      btnSair.addEventListener('click', sair)
- 
+     btnVoltar.addEventListener('click', voltar)
  }
  
  //-------------------------------------------------------------------------------------------------------

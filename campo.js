@@ -94,7 +94,6 @@ function abrirAdjacentes(linha, coluna){
         aux2 = aux2 - 3
         aux1++
     }
-    //return
 }
 
 function abrirEspaco(linha, coluna){
@@ -181,18 +180,31 @@ function inserirInterrogacao( linha, coluna ){
 
 function explodir( linha, coluna ){
     fim_de_jogo = true;
+    pararTempo()
+    somExplosao.play();
     espaco[linha][coluna].innerText = ""
     espaco[linha][coluna].style.backgroundColor = "red"
     let mina = document.createElement("IMG");
     mina.src = "imagens/mina.png"
     mina.classList.add( classeDaImagem ) 
     espaco[linha][coluna].appendChild( mina )
+    espaco[linha][coluna].classList.add( "explodindo" ) 
+    //Mensagem de Derrota
+    mostrador[0].style.display = "none"
+    mostrador[1].style.display = "none"
+    mostrador[2].style.display = "none"
+    mostrador[3].style.display = "none"
+    telaMSG.style.display = "flex"
+    let tempoTotal = ajustarTempo(horas) + ":" + ajustarTempo(minutos) + ":" + ajustarTempo(segundos)
+    let msg_de_vitoria = "Não foi desta vez! Você perdeu no tempo: " + tempoTotal 
+    msgJogo.innerHTML = msg_de_vitoria
 }
 
 function testarVitoria(){
     if( espacos_abertos === espacos_livres){
         pararTempo()
         fim_de_jogo = true
+        somAplausos.play();
         for(let i = 1; i <= linhas; i++){
             for(let j = 1; j <= colunas; j++){            
                 if(campo[i][j] === false){
@@ -205,15 +217,14 @@ function testarVitoria(){
                 }       
             }        
         }
-        mostrador[0].style.display = "none"
-        mostrador[1].style.display = "none"
-        mostrador[2].style.display = "none"
-        mostrador[3].style.display = "none"
-        vitoria.style.display = "flex"
-        vitoria.style.display = "flex"
+        indicador[0].style.display = "none"
+        indicador[1].style.display = "none"
+        indicador[3].style.display = "none"
+        indicador[4].style.display = "none"
+        telaMSG.style.display = "flex"
         let tempoTotal = ajustarTempo(horas) + ":" + ajustarTempo(minutos) + ":" + ajustarTempo(segundos)
         let msg_de_vitoria = "PARABÉNS!!! Você concluiu o nível " + indicadorDeNivel.innerText + " no tempo: " + tempoTotal 
-        msgVitoria.innerHTML = msg_de_vitoria
+        msgJogo.innerHTML = msg_de_vitoria
     }
 }
 

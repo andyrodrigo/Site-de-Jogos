@@ -9,7 +9,7 @@ function iniciarJogo( nivel ){
         case 1:
             linhas = 8
             colunas = 10
-            minas = 2
+            minas = 10
             classeDoEspaco = "espacoGrande"
             classeDaImagem = "imagemEspacoGrande"
             indicadorDeNivel.innerText = "Iniciante"
@@ -50,10 +50,11 @@ function iniciarJogo( nivel ){
     quantDeBandeirasAtuais.classList.add( "branco" )
     btnPause.classList.remove( "azul" )
     btnPause.classList.add( "branco" ) 
-    mostrador[0].style.display = "flex"
-    mostrador[1].style.display = "flex"
-    mostrador[2].style.display = "flex"
-    mostrador[3].style.display = "flex"
+    indicador[0].style.display = "flex"
+    indicador[1].style.display = "flex"
+    indicador[3].style.display = "flex"
+    indicador[4].style.display = "flex"
+    telaMSG.style.display = 'none'
     //troca de tela
     telaInicial.style.display = 'none'
     telaDeJogo.style.display = 'flex'
@@ -76,7 +77,6 @@ function iniciarJogo( nivel ){
         //Cria cada elemento do campo e insere na tabela
         for( j=1 ; j <= colunas ; j++){
             espaco[i][j] = document.createElement("TD");
-            //espaco[i][j].innerHTML = "V"
             espaco[i].appendChild( espaco[i][j] )
             espaco[i][j].classList.add( classeDoEspaco )
             espaco[i][j].addEventListener('mouseup', acaoDoMouse )
@@ -216,12 +216,32 @@ function sair(){
     telaDeJogo.style.display = 'none'
     titulo.style.display = 'flex'
     indicadores.style.display = 'none'
-    vitoria.style.display = "none"
+    telaMSG.style.display = "none"
     //Limpa jogo anterior
     pararTempo()
     telaDeJogo.innerHTML = ""
 }
 
 function mostrarInstrucoes(){
-    alert(espacos_abertos)
+    pausar()
+    indicador[0].style.display = "none"
+    indicador[1].style.display = "none"
+    indicador[2].style.display = "none"
+    indicador[3].style.display = "none"
+    indicador[4].style.display = "none"
+    indicador[6].style.display = "none"
+    btnVoltar.style.display = "flex"
+    telaInstrucoes.style.display = "flex"
+}
+
+function voltar(){
+    indicador[0].style.display = "flex"
+    indicador[1].style.display = "flex"
+    indicador[2].style.display = "flex"
+    indicador[3].style.display = "flex"
+    indicador[4].style.display = "flex"
+    indicador[6].style.display = "flex"
+    btnVoltar.style.display = "none"
+    telaInstrucoes.style.display = "none"
+    pausar()
 }
