@@ -34,7 +34,8 @@ header {
 
 #indicadores{
     display: none;
-    justify-content: center;   
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .indicador{
     display: flex;
@@ -52,6 +53,15 @@ header {
     font-weight: bolder;
     font-size: larger;
 }
+
+#vitoria{
+    display: none;
+    color: goldenrod;
+    width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 #temporizador{
     justify-content: space-around;
 }
@@ -235,4 +245,8 @@ footer{
 
 .branco{
     color: white
+}
+
+.interrogacao{
+    color: yellow
 }

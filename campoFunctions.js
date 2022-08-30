@@ -50,6 +50,10 @@ function iniciarJogo( nivel ){
     quantDeBandeirasAtuais.classList.add( "branco" )
     btnPause.classList.remove( "azul" )
     btnPause.classList.add( "branco" ) 
+    mostrador[0].style.display = "flex"
+    mostrador[1].style.display = "flex"
+    mostrador[2].style.display = "flex"
+    mostrador[3].style.display = "flex"
     //troca de tela
     telaInicial.style.display = 'none'
     telaDeJogo.style.display = 'flex'
@@ -84,7 +88,6 @@ function iniciarJogo( nivel ){
     //Condições de Vitoria e Derrota
     espacos_abertos = 0 
     espacos_livres = (linhas * colunas) - minas
-    console.log(espacos_livres)
     fim_de_jogo =  false
     //Insere o campo na tela
     telaDeJogo.appendChild(tabela)
@@ -213,6 +216,7 @@ function sair(){
     telaDeJogo.style.display = 'none'
     titulo.style.display = 'flex'
     indicadores.style.display = 'none'
+    vitoria.style.display = "none"
     //Limpa jogo anterior
     pararTempo()
     telaDeJogo.innerHTML = ""

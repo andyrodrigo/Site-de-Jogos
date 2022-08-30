@@ -1,35 +1,39 @@
 //Funções----------------------------------------------------------------------------------------------------------
 
 function acaoDoMouse(e) {
+    if(!fim_de_jogo){//Se ainda estiver em jogo
 
-    let linha = e.currentTarget.parentNode.rowIndex + 1
-    let coluna = e.currentTarget.cellIndex + 1
-    
-    if (typeof e === 'object') {
-        switch (e.button) {
-            case 0: //Verifica se é Bomba ou não
-                if(primeiraJogada){
-                    abreJogoInicial(linha, coluna)
-                }else{
-                    verifica(linha, coluna)
-                } 
-            break;
-            case 1: //Não sei ainda o que farei
-                alert("meio")
-            break;
-            case 2: //Coloca a bandeira
-                inserirBandeira(linha, coluna)     
-            break;
-            default:
-                alert("erro")
+        let linha = e.currentTarget.parentNode.rowIndex + 1
+        let coluna = e.currentTarget.cellIndex + 1
+        
+        if (typeof e === 'object') {
+            switch (e.button) {
+                case 0: //Verifica se é Bomba ou não
+                    if(primeiraJogada){
+                        abreJogoInicial(linha, coluna)
+                    }else{
+                        verifica(linha, coluna)
+                    } 
+                    break;
+                case 1: //Coloca uma '?'
+                    inserirInterrogacao(linha, coluna)
+                    break;
+                case 2: //Coloca a bandeira
+                    inserirBandeira(linha, coluna)     
+                    break;
+                default:
+                    alert("erro")
+            }
         }
+        testarVitoria()
     }
-    testarVitoria()
 }
 
 function verifica(linha, coluna){
-    //Se não tiver uma bandeira protegendo este espaço...
-    if( !espaco[linha][coluna].classList.contains("bandeira") && !espaco[linha][coluna].classList.contains("verificado") ){
+    //Se não tiver uma bandeira ou '?' protegendo este espaço...
+    if( !espaco[linha][coluna].classList.contains("bandeira") && 
+        !espaco[linha][coluna].classList.contains("verificado") &&
+        !espaco[linha][coluna].classList.contains("interrogacao")){
         //marca como verificado
         espaco[linha][coluna].classList.add("verificado")
 
@@ -131,8 +135,9 @@ function colorirNumero(minasAoRedor){
 }
 
 function inserirBandeira( linha, coluna ){
-    //se não estiver já aberto
-    if( !espaco[linha][coluna].classList.contains("verificado") ){
+    //se não estiver já aberto e não estive com '?'
+    if( !espaco[linha][coluna].classList.contains("verificado") &&
+        !espaco[linha][coluna].classList.contains("interrogacao") ){
         //se já tiver bandeira
         if( espaco[linha][coluna].classList.contains("bandeira") ){
             espaco[linha][coluna].classList.remove("bandeira")
@@ -158,7 +163,24 @@ function inserirBandeira( linha, coluna ){
     }
 }
 
+function inserirInterrogacao( linha, coluna ){
+    
+    //se não estiver já aberto enão tiver bandeira
+    if( !espaco[linha][coluna].classList.contains("verificado") &&
+        !espaco[linha][coluna].classList.contains("bandeira")){
+        //se já tiver '?'
+        if( espaco[linha][coluna].classList.contains("interrogacao") ){
+            espaco[linha][coluna].classList.remove("interrogacao")
+            espaco[linha][coluna].innerText = "" 
+        }else{//se não tiver '?'
+            espaco[linha][coluna].classList.add("interrogacao")
+            espaco[linha][coluna].innerText = "?" 
+        }
+    }
+}
+
 function explodir( linha, coluna ){
+    fim_de_jogo = true;
     espaco[linha][coluna].innerText = ""
     espaco[linha][coluna].style.backgroundColor = "red"
     let mina = document.createElement("IMG");
@@ -183,6 +205,15 @@ function testarVitoria(){
                 }       
             }        
         }
+        mostrador[0].style.display = "none"
+        mostrador[1].style.display = "none"
+        mostrador[2].style.display = "none"
+        mostrador[3].style.display = "none"
+        vitoria.style.display = "flex"
+        vitoria.style.display = "flex"
+        let tempoTotal = ajustarTempo(horas) + ":" + ajustarTempo(minutos) + ":" + ajustarTempo(segundos)
+        let msg_de_vitoria = "PARABÉNS!!! Você concluiu o nível " + indicadorDeNivel.innerText + " no tempo: " + tempoTotal 
+        msgVitoria.innerHTML = msg_de_vitoria
     }
 }
 
