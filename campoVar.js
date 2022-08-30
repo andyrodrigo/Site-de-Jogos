@@ -19,6 +19,9 @@ const btnIntermediario = document.getElementById("btnIntermediario")
 const btnAvancado = document.getElementById("btnAvancado")
 const btnEspecialista = document.getElementById("btnEspecialista")
 
+let fim_de_jogo =  false
+var espacos_livres
+var espacos_abertos = 0 
 var linhas = 12;
 var colunas = 12;
 var minas = 10;

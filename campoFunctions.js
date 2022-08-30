@@ -9,7 +9,7 @@ function iniciarJogo( nivel ){
         case 1:
             linhas = 8
             colunas = 10
-            minas = 10
+            minas = 2
             classeDoEspaco = "espacoGrande"
             classeDaImagem = "imagemEspacoGrande"
             indicadorDeNivel.innerText = "Iniciante"
@@ -81,6 +81,11 @@ function iniciarJogo( nivel ){
             
         }
     }
+    //Condições de Vitoria e Derrota
+    espacos_abertos = 0 
+    espacos_livres = (linhas * colunas) - minas
+    console.log(espacos_livres)
+    fim_de_jogo =  false
     //Insere o campo na tela
     telaDeJogo.appendChild(tabela)
     //Inicia o temporizador
@@ -209,10 +214,10 @@ function sair(){
     titulo.style.display = 'flex'
     indicadores.style.display = 'none'
     //Limpa jogo anterior
-    clearInterval(cronometro)
+    pararTempo()
     telaDeJogo.innerHTML = ""
 }
 
 function mostrarInstrucoes(){
-    alert("mostrar")
+    alert(espacos_abertos)
 }

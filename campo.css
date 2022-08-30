@@ -152,7 +152,6 @@ footer{
     height: 30px;
     border-radius: 3px;
     margin: 3px;
-    /*padding: 3px;*/
     cursor: pointer;
 }
 
@@ -168,7 +167,6 @@ footer{
     height: 25px;
     border-radius: 3px;
     margin: 3px;
-    /*padding: 3px;*/
     cursor: pointer;
 }
 
@@ -184,7 +182,6 @@ footer{
     height: 20px;
     border-radius: 3px;
     margin: 3px;
-    /*padding: 3px;*/
     cursor: pointer;
 }
 
@@ -206,6 +203,14 @@ footer{
 
 .verificado{
     background-color:darkgray;
+}
+
+.aberto{
+    background-color:chocolate
+}
+
+.bloqueado{
+    background-color:black
 }
 
 .azul{

@@ -24,6 +24,7 @@ function acaoDoMouse(e) {
                 alert("erro")
         }
     }
+    testarVitoria()
 }
 
 function verifica(linha, coluna){
@@ -33,6 +34,8 @@ function verifica(linha, coluna){
         espaco[linha][coluna].classList.add("verificado")
 
         if(campo[linha][coluna] == false){//Não tem MINA
+
+            espacos_abertos++
             let minasAoRedor = adjacentes(linha, coluna)
             
             if(minasAoRedor == 0){
@@ -91,7 +94,7 @@ function abrirAdjacentes(linha, coluna){
 }
 
 function abrirEspaco(linha, coluna){
-    //console.log("campo "+linha +":"+coluna)
+    espacos_abertos++
     //marca como verificado
     espaco[linha][coluna].classList.add("verificado")
     let minasAoRedor = adjacentes(linha, coluna)
@@ -164,6 +167,24 @@ function explodir( linha, coluna ){
     espaco[linha][coluna].appendChild( mina )
 }
 
+function testarVitoria(){
+    if( espacos_abertos === espacos_livres){
+        pararTempo()
+        fim_de_jogo = true
+        for(let i = 1; i <= linhas; i++){
+            for(let j = 1; j <= colunas; j++){            
+                if(campo[i][j] === false){
+                    espaco[i][j].innerHTML = ''
+                    espaco[i][j].classList.remove( "verificado" )
+                    espaco[i][j].classList.add( "aberto" )          
+                }else{
+                    espaco[i][j].classList.remove( "coberto" )
+                    espaco[i][j].classList.add( "bloqueado" ) 
+                }       
+            }        
+        }
+    }
+}
 
 
 
