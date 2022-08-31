@@ -52,8 +52,10 @@ function iniciarJogo( nivel ){
     btnPause.classList.add( "branco" ) 
     indicador[0].style.display = "flex"
     indicador[1].style.display = "flex"
+    indicador[2].style.display = "flex"
     indicador[3].style.display = "flex"
     indicador[4].style.display = "flex"
+    indicador[5].style.display = "flex"
     telaMSG.style.display = 'none'
     //troca de tela
     telaInicial.style.display = 'none'
@@ -192,6 +194,30 @@ function pararTempo(){
     clearInterval(cronometro)
 }
 
+function reiniciar(){
+    pararTempo()
+    telaDeJogo.innerHTML = ""
+    let nivelAtual = indicadorDeNivel.innerHTML.toString()
+    //console.log(nivelAtual)
+    switch(nivelAtual){
+        case 'Iniciante':
+            iniciarJogo(1)
+            break
+        case 'Intermediário':
+            iniciarJogo(2)
+            break
+        case 'Avançado':
+            iniciarJogo(3)
+            break
+        case 'Especialista':
+            iniciarJogo(4)
+            break
+        default:
+            alert("Erro de reinicio")
+            console.log("Erro de reinicio")
+    }
+}
+
 function pausar(){
     if( pausa === false ){
         pausa = true
@@ -229,7 +255,8 @@ function mostrarInstrucoes(){
     indicador[2].style.display = "none"
     indicador[3].style.display = "none"
     indicador[4].style.display = "none"
-    indicador[6].style.display = "none"
+    indicador[5].style.display = "none"
+    indicador[7].style.display = "none"
     btnVoltar.style.display = "flex"
     telaInstrucoes.style.display = "flex"
 }
@@ -240,7 +267,8 @@ function voltar(){
     indicador[2].style.display = "flex"
     indicador[3].style.display = "flex"
     indicador[4].style.display = "flex"
-    indicador[6].style.display = "flex"
+    indicador[5].style.display = "flex"
+    indicador[7].style.display = "flex"
     btnVoltar.style.display = "none"
     telaInstrucoes.style.display = "none"
     pausar()
