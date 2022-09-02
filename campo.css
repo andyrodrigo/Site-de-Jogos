@@ -265,6 +265,8 @@ footer{
 
 #telaInstrucoes{
     display: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bloco_instrucao{
@@ -275,7 +277,7 @@ footer{
     border-radius: 10px;
     font-family:Arial, Helvetica, sans-serif;
     border: 0;
-    width: 33%;
+    width: 420px ;
     margin: 10px;
     box-shadow: 10px 10px 10px black;
     background-color: #233329;
@@ -294,7 +296,7 @@ footer{
 }
 
 #indicadoresImagem{
-    height: 150px;
+    height: 220px;
     width: 350px;
 }
 
@@ -302,12 +304,16 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
 }
 
 .inst_expl > p{
     padding: 10px 15px 10px 15px;
     margin: 0;
+}
+
+.texto_exp{
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 #btnVoltar{
