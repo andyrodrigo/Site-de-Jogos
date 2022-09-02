@@ -205,7 +205,8 @@ function explodir( linha, coluna ){
             }    
         }        
     }
-    espaco[linha][coluna].classList.add( "explodindo" ) 
+    espaco[linha][coluna].classList.add( "explodindo" )
+    espaco[linha][coluna].style.backgroundColor = "yellow"
 }
 
 function testarVitoria(){

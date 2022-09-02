@@ -260,7 +260,8 @@ footer{
 
 @keyframes explodir {
     0%   {width :30px; height: 30px; background-color: darkorange;}
-    100% {width :100px; height: 100px; background-color: red;}
+    50% {width :100px; height: 100px; background-color: red;}
+    100% {width :100px; height: 100px; background-color: yellow;}
 }
 
 #telaInstrucoes{
