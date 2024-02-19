@@ -1,123 +1,132 @@
 @charset "UTF-8";
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-body{
-    background-color:aquamarine;
-
+body {
+  background-color: aquamarine;
 }
 
 header {
-    font-family: Arial, Helvetica, sans-serif;
-    /*background-image: linear-gradient(to left, rgb(0, 216, 0) , green );
+  font-family: Arial, Helvetica, sans-serif;
+  /*background-image: linear-gradient(to left, rgb(0, 216, 0) , green );
     background: linear-gradient(90deg, #3F2B96 0%, #648ffc 100%);*/
-    background-color: #2634d1;
-    color: white;                /*Cor do texto*/
-    padding: 10px;                  /*Espaçamento dentro dele*/
-    margin: 10px;
-    outline: 0px;
-    border: 0;
-    border-radius: 10px;
-    text-align: center;             /*Alinhamento do texto*/
-    box-shadow: 10px 10px 10px black;
+  background-color: #2634d1;
+  color: white; /*Cor do texto*/
+  padding: 10px; /*Espaçamento dentro dele*/
+  margin: 10px;
+  outline: 0px;
+  border: 0;
+  border-radius: 10px;
+  text-align: center; /*Alinhamento do texto*/
+  box-shadow: 10px 10px 10px black;
 }
 
-main{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 10px;
-    outline: 10px;
-    /*min-width: 320px;
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 10px;
+  outline: 10px;
+  /*min-width: 320px;
     max-width: 1000px;*/
-    height: max-content;
-    box-shadow: 10px 10px 10px black;
+  height: max-content;
+  box-shadow: 10px 10px 10px black;
 }
 
-footer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;             /*Alinhamento do texto*/
-    color: white;
-    /*background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);*/
-    background-color: #2634d1;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 10px;
-    outline: 0px;
-    box-shadow: 10px 10px 10px black;
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center; /*Alinhamento do texto*/
+  color: white;
+  /*background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);*/
+  background-color: #2634d1;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 10px;
+  outline: 0px;
+  box-shadow: 10px 10px 10px black;
 }
 
-.bloco{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    margin: 10px;
-    background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
-    box-shadow: 10px 10px 10px black;
+.bloco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+  box-shadow: 10px 10px 10px black;
 }
 
-.nomeDeJogo{
-    color: white;
-    border-radius: 5px;
-    background-color: #1929d8;
-    box-shadow: 10px 10px 10px black;
-    padding: 3px 20px 3px 20px;
+.nomeDeJogo {
+  color: white;
+  border-radius: 5px;
+  background-color: #1929d8;
+  box-shadow: 10px 10px 10px black;
+  padding: 3px 20px 3px 20px;
 }
 
-.imagem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 280px;
-    height: 280px;
+.imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
 }
 
-#imgJogoMemoria{
-    width: 100%;
-    height: 60%;
+#imgJogoMemoria {
+  width: 100%;
+  height: 60%;
 }
 
-#imgJogoVelha{
-    width: 60%;
-    height: 90%;
+#imgJogoVelha {
+  width: 60%;
+  height: 90%;
 }
 
-#imgLoucosRodovia{
-    width: 100%;
-    height: 95%;
+#imgLoucosRodovia {
+  width: 100%;
+  height: 95%;
 }
 
-#imgCampoMinado{
-    width: 90%;
-    height: 90%;
+#imgCampoMinado {
+  width: 90%;
+  height: 90%;
 }
 
-.logo > img{
-    width: 30px;
-    height: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
+#imgZonaDeGuerra {
+  width: 90%;
+  height: 90%;
+}
+
+#imgSimuladorPiano {
+  width: 90%;
+  height: 90%;
+}
+
+.logo > img {
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
